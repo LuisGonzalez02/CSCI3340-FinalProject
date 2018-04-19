@@ -4,12 +4,11 @@
 	<title>Testing Dating App</title>
 </head>
 <body>
-	Input Hour and Minute
+	Choose the time of call
 	<form action="/" method="get">
-		<input type ="text" name="Hour">
-		<input type ="text" name="Minute">
+		<input id="exit-time" name="exit-time" type="time" value=<%=@currentTime%>>
 		<input type="submit" value ="Submit">
 	</form>
-	<%=@time%>
+	You have chosen <%=@chosenTime%>
 </body>
 </html>

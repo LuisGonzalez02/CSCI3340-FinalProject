@@ -1,13 +1,18 @@
 require 'sinatra'
 
 get '/' do
-hour=params["Hour"]
-minute=params["Minute"]
-@time=nil
-if(hour!=nil&&minute!=nil&&!hour.empty?&&!minute.empty?)
-@time=hour.to_s+":"+minute.to_s
+@chosenTime=params["exit-time"]
+if(@chosenTime==nil)
+	@currentTime=getCurrentTime().to_s
+
+else
+	@currentTime=@chosenTime.to_s
 end
 
 
 erb :mainPage
+end
+
+def getCurrentTime()
+	return Time.now.strftime("%H:%M")
 end
