@@ -2,6 +2,8 @@ require 'sinatra'
 require 'chrono'
 require 'twilio-ruby'
 
+
+
 get '/' do
 	@chosenTime=params["exit-time"]
 	if(@chosenTime==nil)
