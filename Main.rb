@@ -1,7 +1,29 @@
 require 'sinatra'
 require 'twilio-ruby'
+require 'sinatra/base'
+require 'sidekiq'
+require 'sidekiq/api'
+require 'sidekiq/web'
 
 
+
+	Sidekiq.configure_client do |config|
+		config.redis={url: ENV['REDIS_PROVIDER']}
+	end
+	Sidekiq.configure_server do |config|
+		config.redis={URL: ENV['REDIS_PROVIDER']}
+	end
+
+class OurWorker
+	include Sidekiq::Worker
+
+	def perform(complexity)
+		case complexity
+		when "testing"
+			delayTime()
+		end
+	end
+end
 
 get '/' do
 	@chosenTime=params["exit-time"]
@@ -18,7 +40,8 @@ end
 
 get '/testing' do
 	@please="The past"
-		delayTime()
+	OurWorker.perform_in(10,"testing")
+	
 
 	return @please
 end
