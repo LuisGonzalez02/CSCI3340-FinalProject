@@ -4,8 +4,8 @@
 	<title>Testing Dating App</title>
 </head>
 <body>
-	Choose the time of call
-	<form action="/" method="get">
+	Choose the time of call <%=Time.now%>
+	<form action="/testing" method="get">
 		<input id="exit-time" name="exit-time" type="time" value=<%=@currentTime%>>
 		<input type="submit" value ="Submit">
 	</form>
