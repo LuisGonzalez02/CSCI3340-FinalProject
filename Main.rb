@@ -9,6 +9,13 @@ require 'sidekiq/web'
 uri = URI.parse(ENV["REDISTOGO_URL"])
 REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 Resque.redis = REDIS
+
+Sidekiq.configure_client do |config|
+	config.redis={url: ENV['REDIS_PROVIDER']}
+end
+Sidekiq.configure_server do |config|
+	config.redis={url: ENV['REDIS_PROVIDER']}
+end
 	
 
 class OurWorker
