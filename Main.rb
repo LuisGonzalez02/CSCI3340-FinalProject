@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'chrono'
 require 'twilio-ruby'
 
 
@@ -19,13 +18,8 @@ end
 
 get '/testing' do
 	@please="The past"
-	#thread exits when the block exits
-	thr=Thread.new{
 		delayTime()
-	}
-	Thread.join
-	#used at end of  program to wait for all threads to finish before ending not necessary in this one
-	#thr.join
+
 	return @please
 end
 
@@ -38,8 +32,6 @@ end
 
 #function that does something after 10 seconds
 def delayTime()
-	trigger = Chrono::Trigger.new("59 18 29 4 0") { Time.now }
-	trigger.once 
 	account_sid = 'AC3040bfd66e0c15eeae03e6b7bd55443c'
 	auth_token = 'a10018bf4cfb66aa234e84b45960c3f5'
 

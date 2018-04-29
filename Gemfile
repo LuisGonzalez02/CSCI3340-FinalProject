@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-gem 'chronos'
 gem 'twilio-ruby'
 #gem 'chronos-api', :require => 'chronos'
