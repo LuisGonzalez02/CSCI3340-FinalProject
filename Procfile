@@ -1,2 +1,2 @@
 web: bundle exec ruby Main.rb -p $PORT
-worker: bundle exec sidekiq -e production
+worker: bundle exec sidekiq -e production -r ./Main.rb
