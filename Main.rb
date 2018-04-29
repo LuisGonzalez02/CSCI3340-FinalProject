@@ -11,7 +11,7 @@ require 'sidekiq/web'
 		config.redis={url: ENV['REDIS_PROVIDER']}
 	end
 	Sidekiq.configure_server do |config|
-		config.redis={URL: ENV['REDIS_PROVIDER']}
+		config.redis={url: ENV['REDIS_PROVIDER']}
 	end
 
 class OurWorker
