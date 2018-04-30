@@ -19,7 +19,7 @@ get '/' do
 end
 
 get '/testing' do
-	@please="The past"
+	@please="Trying to fix"
 	OurWorker.perform_in(10,"testing")
 	
 
