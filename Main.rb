@@ -1,25 +1,9 @@
 require 'sinatra'
 require 'twilio-ruby'
 require 'sinatra/base'
-require 'sidekiq'
-require 'sidekiq/api'
-require 'sidekiq/web'
 require 'uri'
-
-
-
+require './Worker.rb'
 	
-
-class OurWorker
-	include Sidekiq::Worker
-
-	def perform(complexity)
-		case complexity
-		when "testing"
-			delayTime()
-		end
-	end
-end
 
 get '/' do
 	@chosenTime=params["exit-time"]
@@ -41,7 +25,6 @@ get '/testing' do
 
 	return @please
 end
-
 
 
 #function that returns the current time 
