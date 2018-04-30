@@ -20,7 +20,7 @@ end
 
 get '/testing' do
 	@please="Trying to fix"
-	OurWorker.perform_in(10,"testing")
+	//OurWorker.perform_in(10,"testing")
 	
 
 	return @please
