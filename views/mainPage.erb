@@ -1,58 +1,118 @@
 <!doctype html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+    <style>
+    body{
+      background-color: grey;
+    }
+    h1{
+      color: #FFFFFF;
+      font-family: Georgia;
+    }
+    p{
+      color: #FFFFFF;
+    }
+    blockquote{
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-style: italic;
+      width 500px;
+      margin: 0.25em 0;
+      padding: 0.35em 40px;
+      line-height: 1.45;
+      position: center;
+      color: #FFFFFF;
+    }
+  </style>
   </head>
 
-  <body class="text-center">
-  	Choose the time of call <%=Time.now%>
-	<form action="/testing" method="get">
-		<input id="exit-time" name="exit-time" type="time" value=<%=@currentTime%>>
-		<input type="submit" value ="Submit">
-	</form>
-	You have chosen <%=@chosenTime%>
+  <body >
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Cover</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Contact</a>
-          </nav>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Date Escape</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/getinfo">Get Started</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </nav>
+
+    <main role="main" >
+    
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron" style="background-color:#4A195D">
+        <div class="container">
+          <h1 class="display-3" align="center">Escape A Date</h1>
+       
+          <p style="text-decoration-color: #FFFFFF" align="center">
+            <%=Time.now.strftime("%H:%M")%>
+          Want an excuse to leave a date without having the trouble of coming up with a believable story?<br> Date Escape gives you that 
+          chance with a simple call.</p>
+          <p align="center"><a class="btn btn-primary btn-lg" href="/getinfo" role="button" align="center">Get Going &raquo;</a></p>
         </div>
-      </header>
+      </div>
 
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Cover your page.</h1>
-        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-        <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-        </p>
-      </main>
-
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2 align="center">Trusted</h2>
+            <p align=center>The most trusted app in America. Using state of the art technology, allows the user to quickly pay
+            for the service without any worries. Backed by countless(0) companies.</p>
+            <p align="center"><a class="btn btn-primary" href="https://en.wikipedia.org/wiki/List_of_companies_of_the_United_States" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2 align="center">Accessible</h2>
+            <p align="center">Easy to use. Easy to manage. Simply provide what message you want and what time you want the
+              message to be sent to you phone and everything is set for you. No time wasted signing up. </p>
+            <p align="center"><a class="btn btn-primary" href="https://support.microsoft.com/en-us/help/17180/windows-10-make-your-pc-easier-to-use" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2 align="center">Acclaimed</h2>
+            <blockquote>
+              "The greatest invention of our time!" -The New Yurk Times
+              "Changes the way people see the world" -Tim Magazine
+            </blockquote>
+            <p align="center"><a class="btn btn-primary" href="https://www.nytimes.com/" role="button">View details &raquo;</a></p>
+          </div>
         </div>
-      </footer>
-    </div>
 
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Company 2018-2018</p>
+    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -63,4 +123,6 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
   </body>
 </html>
+
+
 

@@ -20,6 +20,17 @@ get '/' do
 
 	erb :mainPage
 end
+get '/getinfo' do
+	@chosenTime=params["exit-time"]
+
+	if(@chosenTime==nil)
+		@currentTime=getCurrentTime().to_s
+	else
+		@currentTime=@chosenTime.to_s
+	end
+	erb :page2
+
+end
 
 get '/testing' do
 	@please="Trying to fix"
@@ -48,7 +59,7 @@ post '/charge' do
     :currency    => 'usd',
     :customer    => customer.id
   )
-
+  delayTime()
   erb :charge
 end
 
@@ -65,7 +76,6 @@ def delayTime()
 
 	# set up a client to talk to the Twilio REST API
 	@client = Twilio::REST::Client.new account_sid, auth_token
-
 	def ffcaller(calledNumber)
 	call = @client.calls.create(
 	   to: calledNumber,
@@ -73,9 +83,8 @@ def delayTime()
 	   url: "https://handler.twilio.com/twiml/EHe5881b22b8f52a84a6b22a72c2882d39")
 	puts call.to
 	end
-
-	newnumber=9563523539
-	string= "+1#{newnumber}"
+	@newnumber=params[:number]
+	string= "+1#{@newnumber}"
 	ffcaller(string)
 end
 
