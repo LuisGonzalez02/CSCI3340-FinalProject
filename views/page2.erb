@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 
 <html lang="en">
@@ -240,3 +241,118 @@
   </body>
 
 </html>
+=======
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <title>Welcome to the fake caller</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>Welcome to DateScape</h2>
+        <p class="lead">please fill the following form to set an escape</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">1</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-50">phone call</h6>
+                <small class="text-muted">at the selected time we will make a call to the selected number</small>
+              </div>
+              <span class="text-muted">$1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$1</strong>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8 order-md-3">
+          
+          <p></p>
+        
+            
+            <div class="col-md-8 mb-3">
+              <form action="/charge" method="post" class="payment">
+                <label for="number">Phone number</label>
+                <input type="number" name="number">
+                <label for="country">Dialog(temporally disabled)</label>
+                <select class="custom-select d-block w-100" id="chosen" required>
+                  <option value="">Choose...</option>
+                  <option>call from friend</option>
+                  <option>call from dad</option>
+                  <option>call from mom</option>
+                  <option>call from goku</option>
+                </select>
+               <p></p>
+
+              <label for="username">time</label>
+
+              <input id="exit-time" name="exit-time" type="time" value=<%=@currentTime%>>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= settings.publishable_key %>"
+            data-description="one time payment"
+            data-amount="100"
+            data-locale="auto"></script>
+              </form>
+                  You have chosen <%=@newnumber%>
+              </div>
+          </form>
+        </div>
+      </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>
+>>>>>>> 654a55165d06c79d2661f09d9779952b17634f4b
