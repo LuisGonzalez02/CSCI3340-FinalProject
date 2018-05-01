@@ -3,8 +3,11 @@ require 'twilio-ruby'
 require 'sinatra/base'
 require 'uri'
 require './Worker.rb'
-	
+require 'stripe'
 
+set :publishable_key, 'pk_test_Bt6PgAyfsT00OIRzjPVd3mQs'
+set :secret_key, 'sk_test_jExBMJHRY8EdED1PU0pALhqI'
+Stripe.api_key = settings.secret_key
 get '/' do
 	@chosenTime=params["exit-time"]
 	if(@chosenTime==nil)
@@ -20,10 +23,33 @@ end
 
 get '/testing' do
 	@please="Trying to fix"
-	OurWorker.perform_in(10,"testing")
+	#OurWorker.perform_in(10,"testing")
 	
 
 	return @please
+end
+
+get '/stripe' do
+  erb :index
+end
+
+post '/charge' do
+	 # Amount in cents
+  @amount = 500
+
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :source  => params[:stripeToken]
+  )
+
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+
+  erb :charge
 end
 
 
