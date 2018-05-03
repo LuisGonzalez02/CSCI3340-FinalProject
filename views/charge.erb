@@ -61,6 +61,12 @@
             
           </div>
         </div>
+
+    <p>Processed: <%=@toProcessed%></p>
+    <p>In Progress: <%=@workers.size%></p>
+    <p>Enqueued: <%=stats.enqueued%></p>
+    <p><a href='/charge'>Refresh</a></p>
+    <p><a href='/sidekiq'>Dashboard</a></p>
   </body>
 </html>
 
