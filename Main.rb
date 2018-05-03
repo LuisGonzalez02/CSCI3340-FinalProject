@@ -21,13 +21,7 @@ get '/' do
 	erb :mainPage
 end
 get '/getinfo' do
-	@chosenTime=params["exit-time"]
-
-	if(@chosenTime==nil)
-		@currentTime=getCurrentTime().to_s
-	else
-		@currentTime=@chosenTime.to_s
-	end
+	
 	erb :page2
 
 end
@@ -45,6 +39,13 @@ get '/stripe' do
 end
 
 post '/charge' do
+	@chosenTime=params["exit-time"]
+
+	if(@chosenTime==nil)
+		@currentTime=getCurrentTime().to_s
+	else
+		@currentTime=@chosenTime.to_s
+	end
 	 # Amount in cents
   @amount = 500
 
@@ -59,7 +60,7 @@ post '/charge' do
     :currency    => 'usd',
     :customer    => customer.id
   )
-  delayTime()
+ # delayTime()
   erb :charge
 end
 
