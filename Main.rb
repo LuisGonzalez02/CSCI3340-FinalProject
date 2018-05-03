@@ -20,7 +20,6 @@ class App < Sinatra::Base
 		stats = Sidekiq::Stats.new
 		workers = Sidekiq::Workers.new
 		"
-		testing
 		<p>Processed: #{stats.processed}</p>
 		<p>In Progress: #{workers.size}</p>
 		<p>Enqueued: #{stats.enqueued}</p>
