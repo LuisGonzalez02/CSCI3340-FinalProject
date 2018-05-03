@@ -1,7 +1,6 @@
 <!doctype html>
 
 <html lang="en">
-  
   <head>
 
   <title>Welcome to the fake caller</title>
@@ -14,11 +13,11 @@
 
   <!-- Bootstrap CSS -->
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-</head>
+  </head>
 
-  <body class="bg-light">
+  <body >
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="/">Date Escape</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,13 +62,13 @@
       color: #FFFFFF;
     }
   </style>
-    
+    <
     <div class="container" style="background-color: grey">
 
       <div class="py-5 text-center">
         
 
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <img class="d-block mx-auto mb-4" src="http://www.clker.com/cliparts/f/e/J/8/3/w/purple-flame-logo.svg" alt="" width="200" height="150">
 
         <h2>Welcome to DateScape</h2>
 
@@ -83,7 +82,7 @@
 
           <h4 class="d-flex justify-content-between align-items-center mb-3">
 
-            <span class="text-muted">Your cart</span>
+            <span class="text-primary" >Your cart</span>
 
             <span class="badge badge-secondary badge-pill">1</span>
 
@@ -97,11 +96,11 @@
 
                 <h6 class="my-50">phone call</h6>
 
-                <small class="text-muted">at the selected time we will make a call to the selected number</small>
+                <small class="text-secondary">at the selected time we will make a call to the selected number</small>
 
               </div>
 
-              <span class="text-muted">$1</span>
+              <span class="text-secondary">$1</span>
 
             </li>
 
@@ -127,15 +126,15 @@
 
             
 
-            <div class="col-md-8 mb-3">
+            <div class="col-md-8 mb-3" style = "font-family:georgia">
 
               <form action="/charge" method="post" class="payment">
 
-                <label for="number">Phone number</label>
+                <label for="number" style="color: #FFFFFF">Phone number</label>
 
                 <input type="number" name="number">
 
-                <label for="country">Dialog(temporally disabled)</label>
+                <label for="country" style="color: #FFFFFF">Dialog(temporally disabled)</label>
 
                 <select class="custom-select d-block w-100" id="chosen" required>
 
@@ -155,13 +154,13 @@
 
 
 
-              <label for="username">time</label>
+              <label for="username" style="color: #FFFFFF">time</label>
 
 
 
               <input id="exit-time" name="exit-time" type="time" value=<%=@currentTime%>>
 
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              < <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 
             data-key="<%= settings.publishable_key %>"
 
@@ -173,7 +172,7 @@
 
               </form>
 
-                  You have chosen <%=@newnumber%>
+                 <label for="username" style="color: #FFFFFF"> You have chosen <%=@newnumber%></label>
 
               </div>
 
@@ -183,7 +182,7 @@
 
       </div>
 
-      <footer class="my-5 pt-5 text-muted text-center text-small">
+      <footer class="my-5 pt-5 text-primary text-center text-small">
 
         <p class="mb-1">&copy; 2018</p>
 
