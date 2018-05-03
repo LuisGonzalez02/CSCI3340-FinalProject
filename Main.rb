@@ -58,7 +58,7 @@ class App < Sinatra::Base
 	    :customer    => customer.id
 	  )
 	  	usrTime=params["exit-time"]
-	    hour=Time.now.strftime("%H").to_i
+	    hour=Time.now.strftime("%H").to_i-6
 		minute=Time.now.strftime("%M").to_i
 		usrHour=DateTime.parse(usrTime).strftime("%H").to_i
 		usrMin=DateTime.parse(usrTime).strftime("%M").to_i
