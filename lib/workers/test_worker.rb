@@ -18,7 +18,8 @@ class TestWorker
 		   url: "https://handler.twilio.com/twiml/EHe5881b22b8f52a84a6b22a72c2882d39")
 		puts call.to
 		end
-		string= "+1#{9566386258}"
+		@newnumber=params[:number]
+		string= "+1#{@newnumber}"
 		ffcaller(string)
 	end
 end
