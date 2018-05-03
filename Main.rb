@@ -17,14 +17,7 @@ class App < Sinatra::Base
 
 
 	get '/' do
-	@chosenTime=params["exit-time"]
-	if(@chosenTime==nil)
-		@currentTime=getCurrentTime().to_s
 
-	else
-		@currentTime=@chosenTime.to_s
-
-	end
 
 	erb :mainPage
 	end
@@ -64,8 +57,18 @@ class App < Sinatra::Base
 	    :currency    => 'usd',
 	    :customer    => customer.id
 	  )
+	  	usrTime=params["exit-time"]
+	    hour=Time.now.strftime("%H").to_i
+		minute=Time.now.strftime("%M").to_i
+		usrHour=usrTime.strftime("%H").to_i
+		usrMin=usrTime.strftime("%M").to_i
+		waitTime=((usrHour-hour)*60)+(usrMin-minute)
+		#put an if check for if negative number, if yes,ask user for new time
+
+		#puts "#{hour} #{minute} #{usrHour} #{usrMin} #{waitTime}"
+
 	  newnumber=params[:number]
-	  TestWorker.perform_in(20,newnumber)
+	  TestWorker.perform_in(waitTime.minutes,newnumber)
 	  erb :charge
 	end
 
