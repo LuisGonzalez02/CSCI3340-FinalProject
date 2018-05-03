@@ -60,7 +60,7 @@ post '/charge' do
     :currency    => 'usd',
     :customer    => customer.id
   )
- # delayTime()
+  delayTime()
   erb :charge
 end
 
