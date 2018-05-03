@@ -4,8 +4,7 @@ require 'twilio-ruby'
 
 class TestWorker
 	include Sidekiq::Worker
-	def perform(sleep_time,phoneNum)
-		sleep sleep_time
+	def perform(phoneNum)
 		account_sid = 'AC3040bfd66e0c15eeae03e6b7bd55443c'
 		auth_token = 'a10018bf4cfb66aa234e84b45960c3f5'
 

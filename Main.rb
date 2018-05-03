@@ -65,7 +65,7 @@ class App < Sinatra::Base
 	    :customer    => customer.id
 	  )
 	  newnumber=params[:number]
-	 TestWorker.perform_async(20,newnumber)
+	  TestWorker.perform_in(20,newnumber)
 	  erb :charge
 	end
 
