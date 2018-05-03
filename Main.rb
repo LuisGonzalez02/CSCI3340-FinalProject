@@ -58,17 +58,17 @@ class App < Sinatra::Base
 	    :customer    => customer.id
 	  )
 	  	usrTime=params["exit-time"]
-	    hour=Time.now.strftime("%H").to_i-6
+	    hour=Time.now.strftime("%H").to_i-5
 		minute=Time.now.strftime("%M").to_i
 		usrHour=DateTime.parse(usrTime).strftime("%H").to_i
 		usrMin=DateTime.parse(usrTime).strftime("%M").to_i
-		waitTime=((usrHour-hour)*60)+(usrMin-minute)
+		waitTime=(((usrHour-hour)*60)+(usrMin-minute))
 		#put an if check for if negative number, if yes,ask user for new time
 
 		#puts "#{hour} #{minute} #{usrHour} #{usrMin} #{waitTime}"
 
 	  newnumber=params[:number]
-	  TestWorker.perform_in(waitTime.minutes,newnumber)
+	  TestWorker.perform_in(waitTime,newnumber)
 	  erb :charge
 	end
 
