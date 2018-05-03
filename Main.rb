@@ -29,6 +29,8 @@ class App < Sinatra::Base
 	erb :mainPage
 	end
 	get '/getinfo' do
+		stats = Sidekiq::Stats.new
+		workers = Sidekiq::Workers.new
 		
 		erb :page2
 
@@ -47,8 +49,7 @@ class App < Sinatra::Base
 	end
 
 	post '/charge' do
-		stats = Sidekiq::Stats.new
-		workers = Sidekiq::Workers.new
+		
 		@inProgress=workers.size
 		@toProcessed=stats.processed
 		@toEnqueued=stats.enqueued
