@@ -60,8 +60,8 @@ class App < Sinatra::Base
 	  	usrTime=params["exit-time"]
 	    hour=Time.now.strftime("%H").to_i
 		minute=Time.now.strftime("%M").to_i
-		usrHour=usrTime.strftime("%H").to_i
-		usrMin=usrTime.strftime("%M").to_i
+		usrHour=DateTime.parse(usrTime).strftime("%H").to_i
+		usrMin=DateTime.parse(usrTime).strftime("%M").to_i
 		waitTime=((usrHour-hour)*60)+(usrMin-minute)
 		#put an if check for if negative number, if yes,ask user for new time
 
