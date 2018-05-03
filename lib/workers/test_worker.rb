@@ -4,7 +4,7 @@ require 'twilio-ruby'
 
 class TestWorker
 	include Sidekiq::Worker
-	def perform(sleep_time)
+	def perform(sleep_time,phoneNum)
 		sleep sleep_time
 		account_sid = 'AC3040bfd66e0c15eeae03e6b7bd55443c'
 		auth_token = 'a10018bf4cfb66aa234e84b45960c3f5'
@@ -18,8 +18,8 @@ class TestWorker
 		   url: "https://handler.twilio.com/twiml/EHe5881b22b8f52a84a6b22a72c2882d39")
 		puts call.to
 		end
-		@newnumber=params[:number]
-		string= "+1#{@newnumber}"
+		
+		string= "+1#{phoneNum}"
 		ffcaller(string)
 	end
 end

@@ -64,7 +64,8 @@ class App < Sinatra::Base
 	    :currency    => 'usd',
 	    :customer    => customer.id
 	  )
-	 TestWorker.perform_async(20)
+	  newnumber=params[:number]
+	 TestWorker.perform_async(20,newnumber)
 	  erb :charge
 	end
 
