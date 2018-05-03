@@ -1,7 +1,6 @@
 require 'twilio-ruby'
 require 'sinatra/base'
 require 'uri'
-require './Worker.rb'
 require 'stripe'
 require 'sidekiq'
 require 'sidekiq/api'
@@ -75,7 +74,7 @@ class App < Sinatra::Base
 	    :currency    => 'usd',
 	    :customer    => customer.id
 	  )
-	 ::TestWorker.perform_async(20)
+	 TestWorker.perform_async(20)
 	  erb :charge
 	end
 
