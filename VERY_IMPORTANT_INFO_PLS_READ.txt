@@ -1,0 +1,13 @@
+Hello, unfortunatly twilio trial account can only call to verified numbers.
+This is a quick guide to verify a number:
+1.-go to the link bellow
+2.-copy the email address from this document and paste it on the website
+3.-repeat the proccess with the password
+4.-check the verification box
+5.-after login in click on the little red circle with a with plus sign
+6.-then just follow the instructions for the verification via phone call or text
+
+
+email:	for226007@gmail.com
+password:	ThisisMyPass1234
+link:	https://www.twilio.com/console/phone-numbers/verified
